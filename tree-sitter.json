@@ -1,0 +1,37 @@
+{
+  "grammars": [
+    {
+      "name": "jinja2",
+      "camelcase": "Jinja2",
+      "scope": "source.jinja2",
+      "file-types": [
+        ".jinja",
+        ".jinja2"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^jinja2$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Jinja2 grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Louis-Maël DERVAL",
+        "email": "louismaelderval@gmail.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/lmderval/tree-sitter-jinja2"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
