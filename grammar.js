@@ -330,12 +330,38 @@ module.exports = grammar({
       $.control_end
     ),
 
+    control_call: $ => seq(
+      seq(
+        $.control_begin,
+        'call',
+        optional(
+          seq(
+            '(',
+            optional(sep($.control_macro_parameter, ',')),
+            ')'
+          )
+        ),
+        field('function', $.identifier),
+        '(',
+        optional_sep($.exp_call_argument, ','),
+        ')',
+        $.control_end
+      ),
+      repeat($.body),
+      seq(
+        $.control_begin,
+        'endcall',
+        $.control_end
+      )
+    ),
+
     control: $ => choice(
       $.control_if,
       $.control_for,
       $.control_macro,
       $.control_set,
-      $.control_do
+      $.control_do,
+      $.control_call
     ),
 
     expression_begin: $ => token(

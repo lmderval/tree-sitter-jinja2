@@ -31,6 +31,10 @@
       "required": true,
       "types": [
         {
+          "type": "control_call",
+          "named": true
+        },
+        {
           "type": "control_do",
           "named": true
         },
@@ -48,6 +52,48 @@
         },
         {
           "type": "control_set",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_call",
+    "named": true,
+    "fields": {
+      "function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "body",
+          "named": true
+        },
+        {
+          "type": "control_begin",
+          "named": true
+        },
+        {
+          "type": "control_end",
+          "named": true
+        },
+        {
+          "type": "control_macro_parameter",
+          "named": true
+        },
+        {
+          "type": "exp_call_argument",
           "named": true
         }
       ]
@@ -892,6 +938,10 @@
     "named": false
   },
   {
+    "type": "call",
+    "named": false
+  },
+  {
     "type": "control_begin",
     "named": true
   },
@@ -909,6 +959,10 @@
   },
   {
     "type": "else",
+    "named": false
+  },
+  {
+    "type": "endcall",
     "named": false
   },
   {

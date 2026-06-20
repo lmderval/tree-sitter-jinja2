@@ -14,6 +14,8 @@
   "macro"
   "endmacro"
   "do"
+  "call"
+  "endcall"
 ] @keyword.control.function
 
 [
@@ -91,3 +93,6 @@
 
 (exp_call_argument
   argument: (identifier) @variable.parameter)
+
+(control_call
+  function: (identifier) @function)
