@@ -1963,6 +1963,27 @@
         }
       ]
     },
+    "control_do": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "control_begin"
+        },
+        {
+          "type": "STRING",
+          "value": "do"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "exp"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "control_end"
+        }
+      ]
+    },
     "control": {
       "type": "CHOICE",
       "members": [
@@ -1981,6 +2002,10 @@
         {
           "type": "SYMBOL",
           "name": "control_set"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "control_do"
         }
       ]
     },

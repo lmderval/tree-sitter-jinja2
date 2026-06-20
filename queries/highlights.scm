@@ -13,6 +13,7 @@
 [
   "macro"
   "endmacro"
+  "do"
 ] @keyword.control.function
 
 [

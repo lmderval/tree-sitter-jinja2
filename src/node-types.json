@@ -31,6 +31,10 @@
       "required": true,
       "types": [
         {
+          "type": "control_do",
+          "named": true
+        },
+        {
           "type": "control_for",
           "named": true
         },
@@ -44,6 +48,29 @@
         },
         {
           "type": "control_set",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_do",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_begin",
+          "named": true
+        },
+        {
+          "type": "control_end",
+          "named": true
+        },
+        {
+          "type": "exp",
           "named": true
         }
       ]
@@ -871,6 +898,10 @@
   {
     "type": "control_end",
     "named": true
+  },
+  {
+    "type": "do",
+    "named": false
   },
   {
     "type": "elif",

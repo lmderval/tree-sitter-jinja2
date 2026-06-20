@@ -323,11 +323,19 @@ module.exports = grammar({
       )
     ),
 
+    control_do: $ => seq(
+      $.control_begin,
+      "do",
+      $.exp,
+      $.control_end
+    ),
+
     control: $ => choice(
       $.control_if,
       $.control_for,
       $.control_macro,
-      $.control_set
+      $.control_set,
+      $.control_do
     ),
 
     expression_begin: $ => token(
