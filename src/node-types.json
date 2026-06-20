@@ -43,7 +43,19 @@
           "named": true
         },
         {
+          "type": "control_from",
+          "named": true
+        },
+        {
           "type": "control_if",
+          "named": true
+        },
+        {
+          "type": "control_import",
+          "named": true
+        },
+        {
+          "type": "control_include",
           "named": true
         },
         {
@@ -239,6 +251,59 @@
     }
   },
   {
+    "type": "control_from",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_begin",
+          "named": true
+        },
+        {
+          "type": "control_end",
+          "named": true
+        },
+        {
+          "type": "control_from_imported",
+          "named": true
+        },
+        {
+          "type": "exp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_from_imported",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "control_if",
     "named": true,
     "fields": {},
@@ -268,6 +333,63 @@
         },
         {
           "type": "control_endif",
+          "named": true
+        },
+        {
+          "type": "exp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_import",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_begin",
+          "named": true
+        },
+        {
+          "type": "control_end",
+          "named": true
+        },
+        {
+          "type": "exp",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "control_include",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "control_begin",
+          "named": true
+        },
+        {
+          "type": "control_end",
           "named": true
         },
         {
@@ -938,7 +1060,15 @@
     "named": false
   },
   {
+    "type": "as",
+    "named": false
+  },
+  {
     "type": "call",
+    "named": false
+  },
+  {
+    "type": "context",
     "named": false
   },
   {
@@ -1002,6 +1132,10 @@
     "named": false
   },
   {
+    "type": "from",
+    "named": false
+  },
+  {
     "type": "identifier",
     "named": true
   },
@@ -1010,7 +1144,19 @@
     "named": false
   },
   {
+    "type": "ignore",
+    "named": false
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
     "type": "in",
+    "named": false
+  },
+  {
+    "type": "include",
     "named": false
   },
   {
@@ -1019,6 +1165,10 @@
   },
   {
     "type": "macro",
+    "named": false
+  },
+  {
+    "type": "missing",
     "named": false
   },
   {
@@ -1039,6 +1189,14 @@
   },
   {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "with",
+    "named": false
+  },
+  {
+    "type": "without",
     "named": false
   },
   {

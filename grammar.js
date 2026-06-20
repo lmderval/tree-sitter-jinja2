@@ -355,13 +355,70 @@ module.exports = grammar({
       )
     ),
 
+    control_include: $ => seq(
+      $.control_begin,
+      'include',
+      $.exp,
+      optional(seq('ignore', 'missing')),
+      optional(
+        seq(
+          choice('with', 'without'),
+          'context'
+        )
+      ),
+      $.control_end
+    ),
+
+    control_import: $ => seq(
+      $.control_begin,
+      'import',
+      $.exp,
+      'as',
+      field('name', $.identifier),
+      optional(
+        seq(
+          choice('with', 'without'),
+          'context'
+        )
+      ),
+      $.control_end
+    ),
+
+    control_from_imported: $ => seq(
+      optional(
+        seq(
+          $.identifier,
+          'as'
+        )
+      ),
+      field('name', $.identifier)
+    ),
+
+    control_from: $ => seq(
+      $.control_begin,
+      'from',
+      $.exp,
+      'import',
+      sep($.control_from_imported, ','),
+      optional(
+        seq(
+          choice('with', 'without'),
+          'context'
+        )
+      ),
+      $.control_end
+    ),
+
     control: $ => choice(
       $.control_if,
       $.control_for,
       $.control_macro,
       $.control_set,
       $.control_do,
-      $.control_call
+      $.control_call,
+      $.control_include,
+      $.control_import,
+      $.control_from
     ),
 
     expression_begin: $ => token(

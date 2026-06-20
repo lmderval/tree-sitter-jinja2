@@ -24,6 +24,18 @@
 ] @keyword.storage.type
 
 [
+  "include"
+  "import"
+  "from"
+  "as"
+  "ignore"
+  "missing"
+  "with"
+  "without"
+  "context"
+] @keyword.control.import
+
+[
   "|"
   "or"
   "and"
@@ -96,3 +108,9 @@
 
 (control_call
   function: (identifier) @function)
+
+(control_import
+  name: (identifier) @variable.parameter)
+
+(control_from_imported
+  name: (identifier) @variable.parameter)
