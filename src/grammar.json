@@ -24,6 +24,10 @@
         {
           "type": "SYMBOL",
           "name": "expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -2506,7 +2510,12 @@
   ],
   "conflicts": [],
   "precedences": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }

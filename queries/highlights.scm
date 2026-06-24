@@ -71,6 +71,8 @@
   (expression_end)
 ] @tag
 
+(comment) @comment.block
+
 (identifier) @variable.other.template
 
 (exp_bool) @constant.builtin.boolean

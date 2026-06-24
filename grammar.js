@@ -46,7 +46,8 @@ module.exports = grammar({
     body: $ => choice(
       $.text,
       $.control,
-      $.expression
+      $.expression,
+      $.comment
     ),
 
     text: $ => token(/([^{]|\{[^{#%])+/),
@@ -442,5 +443,9 @@ module.exports = grammar({
       $.exp,
       $.expression_end
     )
-  }
+  },
+
+  externals: $ => [
+    $.comment
+  ]
 });

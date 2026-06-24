@@ -8,6 +8,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "control",
           "named": true
         },
@@ -1066,6 +1070,10 @@
   {
     "type": "call",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "context",
